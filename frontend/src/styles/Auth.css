@@ -1,0 +1,231 @@
+.auth-container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: radial-gradient(circle at top, #d6b7ff 0%, #5c3b79 45%, #100217 100%);
+}
+
+.auth-card {
+    position: relative;
+    width: 520px;                /* wider like your mock */
+    max-width: 96vw;
+    padding: 3.2rem 3.3rem 2.4rem;
+    border-radius: 40px;         /* soft squircle corners */
+    background: rgba(255, 255, 255, 0.08);
+    border: 1.2px solid rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 26px 60px rgba(0, 0, 0, 0.7);
+    color: #120819;
+}
+
+/* Top, slightly wavy look (fake with top margin) */
+.auth-card::before {
+    content: "";
+    position: absolute;
+    inset: -18px 12px auto 12px;
+    border-radius: 70% 70% 40px 40px;
+    border: 1px solid rgba(255, 255, 255, 0.23);
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* Close (X) button */
+.auth-close {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    width: 30px;
+    height: 30px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.45);
+    color: #f7eefc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 2;
+}
+
+.auth-close:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+/* Title "Login" */
+.auth-title {
+    text-align: center;
+    margin-bottom: 2.4rem;
+    font-weight: 600;
+    font-size: 1.7rem;
+    color: #120819;
+}
+
+/* ========== FORM ELEMENTS ========== */
+.auth-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+
+.auth-label-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: #3b264b;
+}
+
+.auth-label-row span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.auth-icon {
+    font-size: 1rem;
+    opacity: 0.65;
+}
+
+.auth-input {
+    width: 100%;
+    padding: 0.55rem 0.1rem 0.25rem;
+    margin-top: 0.1rem;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+    background: transparent;
+    color: #120819;
+    font-size: 0.96rem;
+}
+
+.auth-input::placeholder {
+    color: rgba(0, 0, 0, 0.45);
+}
+
+.auth-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    margin-top: 0.4rem;
+}
+
+.auth-row label {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: #3b264b;
+}
+
+.auth-row input[type="checkbox"] {
+    accent-color: #7b3fe4;
+}
+
+.auth-link {
+    background: transparent;
+    color: #3b264b;
+    cursor: pointer;
+    font-size: 0.8rem;
+    text-decoration: none;
+}
+
+.auth-link:hover {
+    text-decoration: underline;
+    color: #5a2bb3;
+}
+
+.auth-error {
+    margin-top: 0.1rem;
+    font-size: 0.8rem;
+    color: #e63434;
+}
+
+.auth-button {
+    margin-top: 1.3rem;
+    width: 100%;
+    padding: 0.7rem 0;
+    border-radius: 8px;
+    background: #19141f;
+    color: #f5f2ff;
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    box-shadow: 0 18px 32px rgba(0, 0, 0, 0.75);
+    transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.auth-button:hover:not(:disabled) {
+    background: #000000;
+    transform: translateY(-1px);
+}
+
+.auth-button:disabled {
+    opacity: 0.6;
+    cursor: default;
+}
+
+.auth-footer {
+    margin-top: 1.7rem;
+    text-align: center;
+    font-size: 0.86rem;
+    color: #2d183b;
+}
+
+.auth-footer a {
+    font-weight: 500;
+}
+
+/* ========== OTP ELEMENTS (still work with login styles) ========== */
+.otp-display {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.4rem 0.5rem;
+    margin-bottom: 0.6rem;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.45);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    font-size: 0.86rem;
+}
+
+.otp-display span {
+    color: #2b123b;
+}
+
+.otp-inputs {
+    display: flex;
+    gap: 0.6rem;
+    margin: 0.45rem 0 0.9rem;
+}
+
+.otp-inputs input {
+    width: 52px;
+    height: 52px;
+    text-align: center;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.32);
+    background: rgba(255, 255, 255, 0.75);
+    color: #120819;
+}
+
+.otp-inputs input:focus {
+    border-color: #7b3fe4;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 600px) {
+    .auth-card {
+        width: 100%;
+        padding: 2.4rem 1.7rem 2.1rem;
+        border-radius: 32px;
+    }
+
+    .auth-card::before {
+        inset: -14px 10px auto 10px;
+    }
+}

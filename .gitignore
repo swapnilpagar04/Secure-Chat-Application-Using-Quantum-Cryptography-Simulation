@@ -1,0 +1,39 @@
+# Node
+node_modules/
+npm-debug.log*
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Environment files
+.env
+*.env
+
+# Build outputs
+dist/
+build/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Secrets / keys
+serviceAccountKey.json
+
+# Secrets
+*.json
+!package.json
+!package-lock.json
+!tsconfig.json
+!jsconfig.json
+!vercel.json
+!README.json
+
+# Firebase / service keys
+serviceAccountKey.json
+backend/src/*.json
+.env
+*.env
